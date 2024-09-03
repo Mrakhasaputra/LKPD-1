@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+
+    <style>
+        button{
+            color: white;
+            background: green;
+            border: none;
+            width: 150px;
+            height: 45px;
+            font-size: 15px;
+            font-family: sans-serif;
+        }
+
+        button:hover{
+            background: red;
+        }
+
+        #alert{
+            background: red;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <button id="btn" type="submit">Munculkan Alert</button>
+    <div id="alert"></div>
+
+    <script>
+            const button = document.getElementById('btn');
+            button.addEventListener('click',function(){
+                
+                const add = document.getElementById('alert');
+                let  numberDefault = 6;
+                
+                const interval = setInterval(function(){
+                    numberDefault--;
+                    add.innerHTML=`Danger! Alert akan tertutup dalam ${numberDefault}`;
+                    if(numberDefault < 0){
+                        clearInterval(interval)
+                        add.innerHTML = ''
+                    }
+                },1000);
+
+                const alert = document.getElementById('alert');
+                alert.appendChild(add);
+
+            })
+    </script>
+
+</body>
+</html>

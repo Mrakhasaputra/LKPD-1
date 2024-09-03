@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+</head>
+<body>
+    <form id="imageForm">
+        <label for="img">Ubah :</label>
+        <select name="img" id="img">
+            <option value="wllpr.jpg">Gambar 1</option>
+            <option value="PTJ4kTK4-1676012524.jpg">Gambar 2</option>
+            <option value="599d67d0d3f07fa8db2b2e8ada83a5c9.gif">Gambar 3</option>
+        </select>
+        <label for="opacity">Opacity:</label>
+        <select name="opacity" id="opacity">
+            <option value="0.2">0.2</option>
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+        </select>
+        <button type="button" onclick="image()">Kirim</button>
+    </form>
+
+        <img id="displayImage">
+
+    <script>
+        function image() {
+            const imgSelect = document.getElementById('img').value;
+            const opacitySelect = document.getElementById('opacity').value;
+
+            const image = document.getElementById('displayImage');
+            image.src = imgSelect;
+            image.style.opacity = opacitySelect;
+        }
+    </script>
+</body>
+</html>

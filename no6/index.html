@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        #myForm{
+            background: rgb(201, 201, 201);
+            height: 200px;
+            width: 800px;
+            align-content: center;
+        }
+
+        input{
+            border: none;
+            height: 30px;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<center>
+<form id="myForm">
+    <input type="text" id="search" placeholder="Search" required>
+    <input type="submit"></input>
+</form>
+</center>
+
+<h2 id="message">Tidak mencari data...</h2>
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let searchText = document.getElementById('search').value;
+        
+        let text = document.getElementById('message').textContent = "Memperoses...";
+        
+        setTimeout(function(){
+            document.getElementById('message').textContent = "Mencari data " + searchText + "..";
+        },1000);
+    });
+</script>
+
+</body>
+</html>
